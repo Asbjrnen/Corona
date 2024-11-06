@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class FileHandler {
@@ -30,6 +31,14 @@ public class FileHandler {
         for (Covid19Data covid19Data : dataList) {
             System.out.println(covid19Data);
         }
+    }
+    public void sortByRegion(){
+        dataList.sort(new RegionComparator());
+        printData();
+    }
+    public void sortByAldersgruppe(){
+        dataList.sort(new AldersgruppeComparator());
+        printData();
     }
 
 
